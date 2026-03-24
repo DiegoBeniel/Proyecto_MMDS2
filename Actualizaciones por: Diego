@@ -1,0 +1,45 @@
+# 🧪 Avance 1 — Backend y simulación de datos - 23 de marzo de 2026
+## 🛠️ Procedimiento realizado
+1. Se instaló Node.js y npm en el equipo para permitir la ejecución de aplicaciones backend con JavaScript.
+2. Se creó la carpeta del proyecto y se inicializó con:
+```bash
+npm init -y
+```
+3. Se instalaron las dependencias necesarias:
+```bash
+npm install express cors
+```
+4. Se creó el archivo `server.js` para implementar el servidor backend.
+5. Se configuró el servidor con Express incluyendo:
+   * Middleware `cors` para permitir conexiones externas
+   * Middleware `express.json()` para procesar datos en formato JSON
+6. Se implementaron las siguientes rutas:
+   * `GET /` para verificar que el servidor funciona
+   * `POST /api/datos` para recibir datos (pH y temperatura)
+   * `GET /api/datos` para consultar los datos almacenados
+7. Se utilizó un arreglo en memoria como almacenamiento temporal de datos.
+8. Se ejecutó el servidor con:
+```bash
+node server.js
+```
+9. Se verificó el funcionamiento accediendo a:
+```
+http://localhost:3000
+```
+10. Se realizaron pruebas de envío de datos utilizando la consola del navegador con `fetch`, simulando el comportamiento del ESP32.
+11. Se confirmó la recepción de datos en el servidor mediante la consola.
+12. Se verificó el almacenamiento accediendo a:
+```
+http://localhost:3000/api/datos
+```
+13. Se creó el archivo `simulador.js` para generar datos automáticamente.
+14. Se instaló la dependencia:
+```bash
+npm install node-fetch
+```
+15. Se implementó un script que envía datos cada 5 segundos al servidor.
+16. Se ejecutó el simulador con:
+```bash
+node simulador.js
+```
+17. Se verificó el envío continuo de datos y su almacenamiento en el servidor.
