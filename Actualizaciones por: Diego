@@ -1,129 +1,64 @@
-# 🔧 Actualización — Backend y simulación
-
+1. Actualización — Backend y simulación
 📅 23 de marzo de 2026
 
----
-
-## ⚙️ Configuración inicial
-
+## Configuración inicial
 Se verificó que Node.js y npm funcionaran correctamente.
-
 Esto permite ejecutar JavaScript en el servidor y manejar dependencias del proyecto.
 
----
-
-## 📦 Inicialización del proyecto
-
-Se ejecutó:
-
-npm init -y
-
+## Inicialización del proyecto
+Se ejecutó:  npm init -y
 Se generó el archivo `package.json`, el cual sirve para administrar la configuración y las librerías del proyecto.
 
----
-
-## 📥 Instalación de dependencias
-
-Se instalaron:
-
-npm install express cors
-
+## Instalación de dependencias
+Se instalaron:  npm install express cors
 - express → permite crear el servidor y las rutas (API)  
 - cors → permite que otros dispositivos o páginas se conecten  
-
 Esto hace posible la comunicación del sistema.
 
----
-
-## 🖥️ Creación del servidor
-
+## Creación del servidor
 Se desarrolló el archivo `server.js`.
-
 Se configuró para:
-
 - Recibir datos en formato JSON  
 - Permitir conexiones externas  
-
 Esto permite recibir información como si viniera de un ESP32.
 
----
-
-## 🔌 Implementación de rutas
-
+## Implementación de rutas
 Se crearon las siguientes rutas:
-
 - GET / → verifica que el servidor funciona  
 - POST /api/datos → recibe datos (pH y temperatura)  
 - GET /api/datos → muestra los datos almacenados  
-
 Aquí ya se tiene una API funcional.
 
----
-
-## 🧠 Almacenamiento temporal
-
+## Almacenamiento temporal
 Se utilizó un arreglo para guardar datos:
-
 let datos = [];
-
 Funciona como una base de datos temporal (se borra al reiniciar el servidor).
 
----
-
-## ▶️ Ejecución del servidor
-
-Se ejecutó:
-
-node server.js
-
+## Ejecución del servidor
+Se ejecutó:  node server.js
 Esto levanta el backend en:
 http://localhost:3000
 
----
-
-## 🧪 Pruebas de envío de datos
-
+## Pruebas de envío de datos
 Se enviaron datos desde el navegador usando fetch.
-
 Esto simula cómo el ESP32 enviará información real al sistema.
 
----
-
-## 🔁 Simulación automática
-
+## Simulación automática
 Se creó el archivo `simulador.js`.
-
 Este genera datos cada 5 segundos:
-
 - pH aleatorio  
 - Temperatura aleatoria  
-
 Simula un sistema en tiempo real.
 
----
-
-## 📥 Instalación para simulación
-
-Se instaló:
-
-npm install node-fetch
-
+## Instalación para simulación
+Se instaló:  npm install node-fetch
 Esto permite hacer peticiones HTTP desde Node.js.
 
----
-
-## ▶️ Ejecución del simulador
-
-Se ejecutó:
-
-node simulador.js
-
+## Ejecución del simulador
+Se ejecutó:  node simulador.js
 Esto envía datos automáticamente al servidor.
 
----
-
-## 🚀 Resultado
-
+## Resultado
 ✔️ Servidor funcionando  
 ✔️ API creada  
 ✔️ Recepción de datos activa  
