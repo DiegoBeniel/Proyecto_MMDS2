@@ -1,39 +1,28 @@
-const express = require("express");
-const cors = require("cors");
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// 🔹 "Base de datos" temporal
-let datos = [];
+// Conexión a MongoDB
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('Conectado a MongoDB '))
+  .catch(err => console.error('Error conectando a MongoDB:', err));
 
-// 🔹 Ruta para recibir datos (como si fuera el ESP32)
-app.post("/api/datos", (req, res) => {
-    const nuevoDato = {
-        ph: req.body.ph,
-        temperatura: req.body.temperatura,
-        fecha: new Date()
-    };
+// Rutas
+app.use('/api/datos', require('./routes/datos'));
+app.use('/api/auth', require('./routes/auth'));
 
-    datos.push(nuevoDato);
-
-    console.log("Dato recibido:", nuevoDato);
-
-    res.json({ mensaje: "Dato guardado correctamente" });
+app.get('/', (req, res) => {
+  res.json({ mensaje: 'Servidor de Control de Calidad - Jabón' });
 });
 
-// 🔹 Ruta para obtener datos
-app.get("/api/datos", (req, res) => {
-    res.json(datos);
-});
-
-// 🔹 Ruta de prueba
-app.get("/", (req, res) => {
-    res.send("Servidor funcionando 🚀");
-});
-
-// 🔹 Levantar servidor
-app.listen(3000, () => {
-    console.log("Servidor corriendo en http://localhost:3000");
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
 });
