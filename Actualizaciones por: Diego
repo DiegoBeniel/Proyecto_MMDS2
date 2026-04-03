@@ -63,3 +63,104 @@ Esto envía datos automáticamente al servidor.
 ✔️ API creada  
 ✔️ Recepción de datos activa  
 ✔️ Simulación en tiempo real  
+
+
+03 de Abril del 2026
+#Configuración de la base de datos, de manera local
+
+## Se ejecutó: npm install mongoose dotenv bcryptjs jsonwebtoken
+mongoose → permite conectar el servidor con MongoDB
+dotenv → guarda credenciales en un archivo seguro (.env)
+bcryptjs → encripta contraseñas
+jsonwebtoken → genera tokens de acceso
+
+Esto permite agregar base de datos y seguridad al sistema.
+
+##Configuración de variables de entorno
+
+### Se creó el archivo .env para almacenar credenciales.
+Se configuró:
+MONGODB_URI → cadena de conexión a la base de datos
+JWT_SECRET → clave para autenticación
+PORT → puerto del servidor
+Esto evita exponer información sensible en el código.
+
+### Organización del proyecto
+Se crearon nuevas carpetas:
+models → estructura de datos
+routes → rutas del servidor
+middleware → validación de acceso
+Esto mejora la organización y escalabilidad del sistema.
+
+### Creación del modelo de medición
+##Se desarrolló el archivo Medicion.js.
+Se configuró para guardar:
+- pH
+- temperatura
+- fecha automática
+- estado (OK o ALERTA)
+
+##Se agregó una validación automática:
+- Si los valores están fuera de rango → ALERTA
+- Si están dentro → OK
+Esto permite evaluar los datos sin intervención manual.
+
+### Creación del modelo de usuario
+##Se desarrolló el archivo Usuario.js.
+Se configuró para:
+- Guardar nombre, correo, contraseña y rol
+- Encriptar la contraseña automáticamente
+También se agregó verificación de contraseña para login.
+Esto permite manejar usuarios de forma segura.
+
+### Implementación de rutas de datos
+Se creó routes/datos.js.
+##Se agregaron rutas:
+POST /api/datos → guarda datos del sensor
+GET /api/datos → obtiene registros
+GET /api/datos/ultima → obtiene el dato más reciente
+Esto permite almacenar y consultar información del sistema.
+
+### Implementación de rutas de autenticación
+Se creó routes/auth.js.
+##Se agregaron rutas:
+POST /registro → crear usuario
+POST /login → iniciar sesión
+En el login se genera un token con duración limitada.
+Esto permite controlar el acceso al sistema.
+
+### Creación de middleware
+Se creó middleware/auth.js.
+Se encarga de:
+- Verificar si existe un token
+- Validar que sea correcto
+Si no es válido → acceso denegado
+Esto protege las rutas del sistema.
+
+### Modificación del servidor
+Se actualizó server.js.
+Se agregó:
+- Conexión a MongoDB
+- Uso de nuevas rutas (/api/datos y /api/auth)
+Esto convierte el servidor en un backend completo con base de datos.
+
+### Pruebas y depuración
+Se ejecutó: node server.js
+y node simulador.js
+Se agregó un console.log para ver la respuesta del servidor.
+Esto permitió verificar si los datos se estaban guardando correctamente.
+
+### Corrección de errores
+- Se detectaron problemas en los middlewares de los modelos.
+- Se realizaron ajustes:
+- Se eliminó el uso de next() en funciones innecesarias
+- Se corrigió el flujo de guardado en Mongoose
+- Esto permitió que los datos se procesaran correctamente.
+
+### Resultado
+✔️ Estructura backend completa
+✔️ Modelos funcionando
+✔️ Rutas implementadas
+✔️ Sistema de autenticación agregado
+✔️ Depuración activa
+⚠️ Conexión con MongoDB Atlas en proceso
