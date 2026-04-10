@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
 });
 
 // Obtener últimas 100 mediciones (requiere login)
-router.get('/', verificarToken, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const datos = await Medicion.find()
       .sort({ fecha: -1 })
@@ -28,7 +28,7 @@ router.get('/', verificarToken, async (req, res) => {
 });
 
 // Obtener solo la última medición (para el dashboard en tiempo real)
-router.get('/ultima', verificarToken, async (req, res) => {
+router.get('/ultima', async (req, res) => {
   try {
     const ultima = await Medicion.findOne().sort({ fecha: -1 });
     res.json(ultima);
