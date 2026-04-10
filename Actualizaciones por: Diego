@@ -164,3 +164,47 @@ Esto permitió verificar si los datos se estaban guardando correctamente.
 ✔️ Sistema de autenticación agregado
 ✔️ Depuración activa
 ⚠️ Conexión con MongoDB Atlas en proceso
+
+
+3. Actualización — Frontend básico sin login
+📅 10 de abril de 2026
+Creación de la carpeta public
+Se creó la carpeta public/ dentro del proyecto.
+Esta carpeta almacena los archivos del frontend que el servidor sirve directamente al navegador.
+Separación en 3 archivos
+El dashboard se dividió en:
+
+dashboard.html → estructura de la página
+style.css → estilos visuales
+dashboard.js → lógica y conexión con el servidor
+
+Esto mantiene el código organizado y más fácil de mantener.
+Configuración del servidor para servir archivos
+Se agregó en server.js:
+app.use(express.static('public'))
+Esto le indica al servidor que entregue los archivos de la carpeta public cuando alguien los solicite desde el navegador.
+Desarrollo del dashboard
+Se implementaron los siguientes elementos:
+
+Tarjeta de pH actual con indicador de rango
+Tarjeta de temperatura actual con indicador de rango
+Tarjeta de estado general del lote (OK / ALERTA)
+Tabla con las últimas 10 mediciones
+Reloj en tiempo real en el header
+Footer con nombre del proyecto
+
+Lógica de actualización automática
+El dashboard consulta al servidor cada 5 segundos sin necesidad de recargar la página.
+Los colores cambian automáticamente según los rangos establecidos:
+
+Verde → valores dentro del rango
+Rojo → valores fuera de rango
+
+Modificación de rutas
+Se eliminó la verificación de token en las rutas GET de routes/datos.js temporalmente para permitir que el dashboard lea datos sin login.
+Resultado
+✔️ Dashboard funcional y visible en el navegador
+✔️ Datos actualizándose en tiempo real
+✔️ Indicadores visuales de calidad funcionando
+⚠️ Login pendiente de implementar
+
