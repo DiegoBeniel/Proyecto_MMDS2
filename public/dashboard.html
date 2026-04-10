@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Calidad - Jabones</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1> Gestión de Calidad — Jabón Líquido </h1>
+    <span id="hora">--:--:--</span>
+  </header>
+
+  <main>
+    <div class="tarjetas">
+      <div class="tarjeta" id="tarjeta-ph">
+        <p class="etiqueta">pH Actual:</p>
+        <p class="valor" id="valor-ph">--</p>
+        <p class="rango">Rango óptimo: 5.0 – 7.0</p>
+        <span class="badge" id="badge-ph">--</span>
+      </div>
+
+      <div class="tarjeta" id="tarjeta-temp">
+        <p class="etiqueta">Temperatura:</p>
+        <p class="valor" id="valor-temp">--</p>
+        <p class="rango">Rango óptimo: 20°C – 40°C</p>
+        <span class="badge" id="badge-temp">--</span>
+      </div>
+
+      <div class="tarjeta" id="tarjeta-estado">
+        <p class="etiqueta">Estado del Lote:</p>
+        <p class="valor" id="icono-estado">--</p>
+        <p class="rango">Última medición:</p>
+        <span class="badge" id="badge-estado">--</span>
+      </div>
+    </div>
+
+    <div class="seccion-tabla">
+      <h2>Últimas Mediciones registradas:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Fecha y Hora</th>
+            <th>pH</th>
+            <th>Temperatura</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo-tabla">
+          <tr>
+            <td colspan="5">Cargando datos...</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="nota">Se actualiza cada 5 segundos</p>
+    </div>
+  </main>
+  <script src="dashboard.js"></script>
+  <footer>
+    <p>Control de Calidad — Jabón Líquido de Ortiga y Diente de León</p>
+    <p>CETI 2026 - Diego y Andrés</p>
+  </footer>
+</body>
+</html>
