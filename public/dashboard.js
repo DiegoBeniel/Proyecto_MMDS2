@@ -32,23 +32,23 @@ async function cargarDatos() {
       const todoOk = phOk && tempOk;
 
       // Tarjeta pH
-      document.getElementById('valor-ph').textContent = Number(ultima.ph).toFixed(2);
-      estilizarTarjeta('tarjeta-ph', 'badge-ph', phOk);
+      document.getElementById('valor_ph').textContent = Number(ultima.ph).toFixed(2);
+      estilizarTarjeta('tarjeta_ph', 'badge_ph', phOk);
 
       // Tarjeta temperatura
-      document.getElementById('valor-temp').textContent = Number(ultima.temperatura).toFixed(1) + '°C';
-      estilizarTarjeta('tarjeta-temp', 'badge-temp', tempOk);
+      document.getElementById('valor_temp').textContent = Number(ultima.temperatura).toFixed(1) + '°C';
+      estilizarTarjeta('tarjeta_temp', 'badge_temp', tempOk);
 
       // Tarjeta estado general
-      document.getElementById('icono-estado').textContent = todoOk ? 'OK' : 'ALERTA';
-      estilizarTarjeta('tarjeta-estado', 'badge-estado', todoOk);
-      document.getElementById('badge-estado').textContent = todoOk ? 'Lote OK' : 'ALERTA';
+      document.getElementById('icono_estado').textContent = todoOk ? 'OK' : 'ALERTA';
+      estilizarTarjeta('tarjeta_estado', 'badge_estado', todoOk);
+      document.getElementById('badge_estado').textContent = todoOk ? 'Lote OK' : 'ALERTA';
     }
 
     // Tabla de las anteriores mediciones 
     const resDatos = await fetch('/api/datos');
     const datos    = await resDatos.json();
-    const tbody    = document.getElementById('cuerpo-tabla');
+    const tbody    = document.getElementById('cuerpodetabla');
     tbody.innerHTML = ''; /* limpia la tabla antes de llenarla para no duplicar filas*/
 
     datos.slice(0, 20).forEach((m, i) => {
