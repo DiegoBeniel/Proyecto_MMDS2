@@ -17,7 +17,7 @@ header {
 }
 
 header h1 {
-  color: #2ecc71;
+  color: #952ecc;
   font-size: 20px;
 }
 
@@ -29,6 +29,10 @@ main {
   display: flex;
   gap: 20px; /* espacio entre esas*/
   margin-bottom: 30px;
+}
+
+.tarjeta:hover {
+  transform: scale(1.01);
 }
 
 .tarjeta {
@@ -71,15 +75,15 @@ main {
 .badge.ok    { background: #2c6548; color: #2ecc71; }
 .badge.alerta { background: #552525; color: #e74c3c; }
 
-.seccion-tabla {
+.arribadetabla {
   background: #242424;
   padding: 25px;
   border-radius: 10px;
 }
 
-.seccion-tabla h2 {
+h2 {
   color: #2ecc71;
-  margin-bottom: 16px;
+  margin-bottom: 15px;
 }
 
 table {
@@ -106,6 +110,29 @@ td {
   color: #555;
   margin-top: 10px;
   text-align: right;
+}
+
+.fondo_gris {
+  margin-top: 20px;
+  background: #242424;
+  padding: 25px;
+  border-radius: 10px;
+}
+h4{
+  font-size: 15px;
+  text-align: center;
+}
+.graficas {
+  display: flex;
+  gap: 30px; /* espacio entre esas*/
+  margin-bottom: 30px;
+}
+
+.grafica {
+  background: #424242;
+  padding: 25px;
+  border-radius: 20px;
+  flex: 1; /*  mismo ancho */
 }
 
 footer {
