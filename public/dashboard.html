@@ -14,30 +14,30 @@
   </header>
 
   <main>
+    <h2>Datos actuales:</h2>
     <div class="tarjetas">
-      <div class="tarjeta" id="tarjeta-ph">
-        <p class="etiqueta">pH Actual:</p>
-        <p class="valor" id="valor-ph">--</p>
-        <p class="rango">Rango óptimo: 5.0 – 7.0</p>
-        <span class="badge" id="badge-ph">--</span>
+      <div class="tarjeta" id="tarjeta_ph">
+        <p class="etiqueta">pH:</p>
+        <p class="valor" id="valor_ph">--</p>
+        <p class="rango">Rango óptimo recomendado: 5.0 – 7.0</p>
+        <span class="badge" id="badge_ph">--</span>
       </div>
 
-      <div class="tarjeta" id="tarjeta-temp">
+      <div class="tarjeta" id="tarjeta_temp">
         <p class="etiqueta">Temperatura:</p>
-        <p class="valor" id="valor-temp">--</p>
-        <p class="rango">Rango óptimo: 20°C – 40°C</p>
-        <span class="badge" id="badge-temp">--</span>
+        <p class="valor" id="valor_temp">--</p>
+        <p class="rango">Rango óptimo recomendado: 20°C – 40°C</p>
+        <span class="badge" id="badge_temp">--</span>
       </div>
 
-      <div class="tarjeta" id="tarjeta-estado">
+      <div class="tarjeta" id="tarjeta_estado">
         <p class="etiqueta">Estado del Lote:</p>
-        <p class="valor" id="icono-estado">--</p>
+        <p class="valor" id="icono_estado">--</p>
         <p class="rango">Última medición:</p>
-        <span class="badge" id="badge-estado">--</span>
+        <span class="badge" id="badge_estado">--</span>
       </div>
     </div>
-
-    <div class="seccion-tabla">
+    <div class="arribadetabla">
       <h2>Últimas Mediciones registradas:</h2>
       <table>
         <thead>
@@ -49,13 +49,45 @@
             <th>Estado</th>
           </tr>
         </thead>
-        <tbody id="cuerpo-tabla">
+        <tbody id="cuerpodetabla">
           <tr>
             <td colspan="5">Cargando datos...</td>
           </tr>
         </tbody>
       </table>
       <p class="nota">Se actualiza cada 5 segundos</p>
+    </div>
+    <div class="fondo_gris">
+      <h2>Gráficas de los datos:</h2>
+
+      <div class="graficas">
+
+      <div class="grafica">
+        <h4>Gráfica 1</h4>
+          <div>
+            <img src="" alt="Grafica de" />
+          </div>
+        <br></br>
+      </div>
+
+      <div class="grafica">
+        <h4>Gráfica 2</h4>
+          <div>
+            <img src="" alt="Grafica de" />
+          </div>
+        <br></br>
+      </div>
+
+      <div class="grafica">
+        <h4>Gráfica 3</h4>
+          <div>
+            <img src="" alt="Grafica de " />
+          </div>
+        <br></br>
+      </div>
+
+      </div>
+
     </div>
   </main>
   <script src="dashboard.js"></script>
